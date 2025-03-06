@@ -97,7 +97,7 @@ const TableOpcion = () => {
                 {value.name}
               </h2>
               <p className="text-gray-600">
-                Key Input : <span className="text-indigo-400">{value.key}</span>{" "}
+                Key Input : <span className="text-green-400">{value.key}</span>{" "}
               </p>
               <p className="mb-4 text-gray-500">{value.description}</p>
               <div className="card-actions"></div>

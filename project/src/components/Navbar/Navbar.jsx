@@ -1,27 +1,16 @@
-import React, { useRef } from "react";
-import { useState } from "react";
-import { FaJs } from "react-icons/fa6";
-import { Dialog, DialogPanel } from "@headlessui/react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { LogoDesign, Vite, Women } from "../Icons/Logos";
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Docs", href: "docs" },
-  { name: "Data", href: "datos" },
-  // { name: "Contact", href: "contact" },
-  { name: "DashBoard", href: "dash" },
-  { name: "Create", href:"create"}
-];
+
+
 export const Navbar = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const barraNav = useRef()
   return (
     <nav className= "relative w-full z-20 top-0 start-0 bg-transparent">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <LogoDesign  alto={"50px"} ancho={"40px"}></LogoDesign>
+        <button className="font-semibold text-zinc-700">DataFast</button>
         <div className="inline-flex gap-1 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <Link className="bg-indigo-600 pl-4 pr-4 text-white pt-2 pb-2 rounded-md " to="register">Register</Link>
-          <Link className="bg-indigo-600 pl-4 pr-4 text-white pt-2 pb-2 rounded-md " to="login">Login</Link>
+          <Link className="bg-green-400 pl-4 pr-4 font-medium text-white pt-2 pb-2 rounded-md " to="register">Registrar</Link>
+          <Link className=" pl-4 pr-4 text-zinc-500 border font-medium border-indig pt-2 pb-2 rounded-md " to="login">Iniciar sesion</Link>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -53,10 +42,10 @@ export const Navbar = () => {
           ref={barraNav}
           
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <ul className="flex flex-col  md:p-0 mt-4 border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             {navigation.map((value,key)=>(
-              <li  className="p-2" key={key}>
-                <Link to={value.href} className="text-gray-700 font-normal">{value.name}</Link>
+              <li className="p-2" key={key}>
+                <Link to={value.href} className="text-gray-500 font-medium">{value.name}</Link>
               </li>
             ))}
           </ul>
@@ -65,3 +54,12 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+
+const navigation = [
+  { name: "Inicio", href: "/" },
+  { name: "Documentacion", href: "docs" },
+  { name: "Datos", href: "datos" },
+  { name: "DashBoard", href: "dash" },
+  { name: "Crear", href:"create"}
+];
